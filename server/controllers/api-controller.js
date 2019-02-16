@@ -10,12 +10,12 @@ const makeApiController = db => {
     const match = {
       $match: { friendlyId: req.params.id },
     };
-    const blogLookup = {
+    const channelLookup = {
       $lookup: {
         from: 'radiks-server-data',
         localField: 'userGroupId',
         foreignField: '_id',
-        as: 'blog',
+        as: 'channel',
       },
     };
     const authorLookup = {
@@ -26,15 +26,15 @@ const makeApiController = db => {
         as: 'author',
       },
     };
-    const [blogPost] = await db
-      .aggregate([match, blogLookup, authorLookup])
+    const [channelPost] = await db
+      .aggregate([match, channelLookup, authorLookup])
       .toArray();
-    const [author] = blogPost.author;
-    const [blog] = blogPost.blog;
-    blogPost.author = author;
-    blogPost.blog = blog;
+    const [author] = channelPost.author;
+    const [channel] = channelPost.channel;
+    channelPost.author = author;
+    channelPost.channel = channel;
 
-    res.json(blogPost);
+    res.json(channelPost);
   });
 
   return router;

@@ -1,4 +1,5 @@
 /* eslint consistent-return:0 import/order:0 */
+
 require('dotenv').config();
 const express = require('express');
 const radiks = require('radiks-server');
@@ -26,7 +27,26 @@ radiks
     app.use('/radiks', RadiksConroller);
     app.use('/api', makeApiController(RadiksConroller.db));
 
-    // add page service here
+    // Create a new channel
+    app.get('/channel/new', (req, res) => {
+      const { params } = req;
+      app.render((req, res, '/channel/new', params));
+    });
+
+    // View a channel
+    app.get('/channel/:id', (req, res) => {
+      const { params } = req;
+      app.render(req, res, '/channel/show', params);
+    });
+
+    // Create new post
+    app.get('/channel/:id/posts/new', (req, res) => {
+      app.render(req, res, '/channel/posts/new', req.params);
+    });
+
+    app.get('/posts/:id', (req, res) => {
+      app.render(req, res, '/posts/show', req.params);
+    });
   });
 
 // In production we need to pass these values in instead of relying on webpack
