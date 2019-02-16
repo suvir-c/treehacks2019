@@ -37,6 +37,17 @@ const makeApiController = db => {
     res.json(blogPost);
   });
 
+  router.getAsync('/reports/:authorName', async (req, res) => {
+    console.log(req.params.id);
+
+    const match = {
+      $match: { authorName: req.params.authorName },
+    };
+    const [report] = await db.aggregate([match]).toArray();
+
+    res.json(report);
+  });
+
   return router;
 };
 
