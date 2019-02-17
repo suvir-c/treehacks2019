@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "7.0.0",
+    "@esri/react-arcgis": "^4.0.0",
     "blockstack": "^18.3.0",
     "chalk": "^2.4.1",
     "compression": "1.7.3",

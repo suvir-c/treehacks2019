@@ -1,6 +1,7 @@
 .topNavigation {
 	position: fixed;
 	display: flex;
+	z-index: 1000;
 	align-items: center;
 	left: 0;
 	top: 0;
