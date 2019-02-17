@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import PropTypes from 'prop-types';
+import Button from 'components/Button';
 import UserActions from '../../stores/user/actions';
 
 class Login extends React.Component {
@@ -15,9 +16,9 @@ class Login extends React.Component {
 
   render() {
     return (
-      <button type="button" onClick={this.props.login} my={6}>
-        Sign In with Blockstack
-      </button>
+      <div className="page-wrapper-sidebar login-page">
+        <Button title="Sign In with Blockstack" onClick={this.props.login} />
+      </div>
     );
   }
 }
