@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import SideNavigation from 'components/SideNavigation';
 import Button from 'components/Button';
@@ -13,7 +14,6 @@ class HomePage extends React.Component {
   };
 
   async componentWillMount() {
-    console.log(process.env.RADIKS_API_URL);
     const channels = await fetchChannels();
     this.setState({ channels });
   }
@@ -24,10 +24,9 @@ class HomePage extends React.Component {
       description: this.state.communityDescription,
     });
     await channel.create();
-    // redirect
-
     // close form
     this.toggleCommunityForm();
+    // redirect
   };
 
   toggleCommunityForm = () => {
@@ -37,16 +36,24 @@ class HomePage extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     let channels = null;
     if (this.state.channels) {
       channels = this.state.channels.map(channel => (
         <div className="card card-short">
           <div>
-            <a href={`channel/${channel.attrs.name}`}>
+            <Link
+              to={{
+                pathname: '/support',
+                state: {
+                  id: channel.attrs.id,
+                  name: channel.attrs.name,
+                  description: channel.attrs.description,
+                },
+              }}
+            >
               <h3>{channel.attrs.name}</h3>
               <p>{channel.attrs.description}</p>
-            </a>
+            </Link>
           </div>
         </div>
       ));

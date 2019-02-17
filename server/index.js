@@ -70,15 +70,15 @@ app.prepare().then(async () => {
   });
 
   // Create a new channel
-  server.get('/channel/new', (req, res) => {
+  server.get('/channel', (req, res) => {
     const { params } = req;
-    app.render((req, res, '/channel/new', params));
+    app.render((req, res, '/support', params));
   });
 
   // View a channel
   server.get('/channel/:id', (req, res) => {
     const { params } = req;
-    app.render(req, res, '/channel/show', params);
+    app.render(req, res, '/SupportRoomPage', params);
   });
 
   // Create new post
@@ -98,6 +98,6 @@ app.prepare().then(async () => {
 
   server.listen(port, err => {
     if (err) throw err;
-    console.log(`> Ready on http://localhost:${port}`);
+    // console.log(`> Ready on http://localhost:${port}`);
   });
 });
