@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 const express = require('express');
+const path = require('path');
 const radiks = require('radiks-server');
 const makeApiController = require('./controllers/api-controller');
 const logger = require('./logger');
@@ -11,9 +12,10 @@ const port = require('./port');
 const setup = require('./middlewares/frontendMiddleware');
 
 const isDev = process.env.NODE_ENV !== 'production';
-const ngrok = (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel
-  ? require('ngrok')
-  : false;
+const ngrok =
+  (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel
+    ? require('ngrok')
+    : false;
 const { resolve } = require('path');
 
 const app = express();
@@ -24,14 +26,19 @@ radiks
   .setup({
     mongoDBUrl: process.env.MONGODB_URI,
   })
-  .then((RadiksConroller) => {
+  .then(RadiksConroller => {
     app.use('/radiks', RadiksConroller);
+
     app.use('/api', makeApiController(RadiksConroller.db));
 
     app.use((req, res, _next) => {
       res.header('Access-Control-Allow-Origin', '*');
       res.header('Access-Control-Allow-Headers', '*');
       _next();
+    });
+
+    app.get('/manifest.json', (req, res) => {
+      res.sendFile(path.join(__dirname, '..', 'static', 'manifest.json'));
     });
 
     // Create a new channel
@@ -75,7 +82,7 @@ app.get('*.js', (req, res, next) => {
 });
 
 // Start your app.
-app.listen(port, host, async (err) => {
+app.listen(port, host, async err => {
   if (err) {
     return logger.error(err.message);
   }

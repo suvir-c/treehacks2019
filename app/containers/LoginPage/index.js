@@ -1,15 +1,21 @@
-/**
- * NotFoundPage
- *
- * This is the page we show when the user visits a url that doesn't have a route
- */
-
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-export default function NotFound() {
-  return (
-    <div>
-      <h1>Hello</h1>
-    </div>
-  );
+import UserActions from '../../stores/user/actions';
+
+class Login extends React.Component {
+  state = {};
+
+  render() {
+    return <h1>hi</h1>;
+  }
 }
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(Object.assign({}, UserActions), dispatch);
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Login);
