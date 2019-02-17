@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import UserActions from '../../stores/user/actions';
+import ReportActions from '../../stores/report/actions';
 
 class AdminReportsPage extends React.Component {
   state = {};
@@ -27,7 +27,7 @@ class AdminReportsPage extends React.Component {
 const mapStateToProps = state => ({ redux: state });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators(Object.assign({}, UserActions), dispatch);
+  bindActionCreators(Object.assign({}, ReportActions), dispatch);
 
 export default connect(
   mapStateToProps,
