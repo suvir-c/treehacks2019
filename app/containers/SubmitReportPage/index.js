@@ -2,6 +2,9 @@ import React from 'react';
 
 import SideNavigation from 'components/SideNavigation';
 import Button from 'components/Button';
+import { bindActionCreators } from 'redux';
+import ReportActions from 'radiks';
+import { connect } from 'react-redux';
 
 class SubmitReportPage extends React.Component {
   state = {
@@ -65,4 +68,12 @@ class SubmitReportPage extends React.Component {
   }
 }
 
-export default SubmitReportPage;
+const mapStateToProps = state => ({ redux: state });
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(Object.assign({}, ReportActions), dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SubmitReportPage);
