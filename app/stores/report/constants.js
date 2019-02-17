@@ -1,0 +1,1 @@
+export const SUBMIT_NEW_REPORT = 'SUBMIT_NEW_REPORT';
