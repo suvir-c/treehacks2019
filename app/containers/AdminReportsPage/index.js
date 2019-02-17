@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { fetchReports } from '../../lib/api';
 
 class AdminReportsPage extends React.Component {
   state = {};
