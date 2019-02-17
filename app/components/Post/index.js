@@ -34,7 +34,7 @@ class Post extends React.Component {
     }
     return (
       <div className="post-wrapper">
-        <h4 className="author">Author</h4>
+        <h4 className="author">Anonymous Author</h4>
         <div className="post">
           <p className="body-text">{this.props.value}</p>
           <button
