@@ -10,18 +10,17 @@ import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 
 class TextInput extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <input type="text" placeholder={this.props.preview} />
-        );
-    }
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return <input type="text" placeholder={this.props.preview} />;
+  }
 }
 
 TextInput.propTypes = {
-    preview: PropTypes.string,
+  preview: PropTypes.string,
 };
 
 export default TextInput;

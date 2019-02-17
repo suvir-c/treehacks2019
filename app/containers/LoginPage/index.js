@@ -6,11 +6,12 @@
 import React from 'react';
 import TextInput from 'components/TextInput';
 // import Button from 'components/Button';
-import {
-  Flex, Type, Box, Button,
-} from 'blockstack-ui';
+import { Flex, Type, Box, Button } from 'blockstack-ui';
 import * as blockstack from 'blockstack';
-import { SignInBlockstackButton, SignInBlockstackLiteButton } from 'blockstack-signin-btn';
+import {
+  SignInBlockstackButton,
+  SignInBlockstackLiteButton,
+} from 'blockstack-signin-btn';
 
 class Login extends React.Component {
   render() {
