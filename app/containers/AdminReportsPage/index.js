@@ -26,7 +26,22 @@ class AdminReportsPage extends React.Component {
             <h3>Report Status</h3>
             <p>Sumittted Jan 14, 2019</p>
             <p>Location: W 38th St, Los Angeles, CA 90007</p>
-            <p>Insert short description here...</p>
+            <p className="red">
+              Assault high risk: Joe Smith (shown in 5 cases)
+            </p>
+            <div className="status">
+              <h4>Filed</h4>
+            </div>
+          </div>
+        </div>
+        <div className="card card-long">
+          <div>
+            <h3>Report Status</h3>
+            <p>Sumittted Dec 15, 2018</p>
+            <p>Location: W 25th St, Los Angeles, CA 90007</p>
+            <p className="red">
+              Assault high risk: Joe Smith (shown in 5 cases)
+            </p>
             <div className="status">
               <h4>Filed</h4>
             </div>

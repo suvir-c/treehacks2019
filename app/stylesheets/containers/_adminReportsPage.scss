@@ -5,6 +5,7 @@
 		h3 {
 			color: $purple;
 		}
+		line-height: 1em;
 		position: relative;
 		.status {
 			background-color: transparentize($green, 0.3);
@@ -17,6 +18,10 @@
 			right: 5px;
 			transform: translate(-50%, -50%);
 			border-radius: 10px;
+		}
+		.red {
+			color: $red;
+			font-weight: bold;
 		}
 	}
 }
