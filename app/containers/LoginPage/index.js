@@ -17,6 +17,14 @@ class Login extends React.Component {
   render() {
     return (
       <div className="page-wrapper-sidebar login-page">
+        <h1>Log In to Echo</h1>
+        <p>
+          We are an anonymous platform with the mission of supporting sexual
+          harassment victims by decentralizing user data and creating localized
+          anonymous support communities. We use blockchain technology to ensure
+          that your data is private to you and that your community will not know
+          your identity.
+        </p>
         <Button title="Sign In with Blockstack" onClick={this.props.login} />
       </div>
     );
