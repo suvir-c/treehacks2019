@@ -2,9 +2,9 @@ import React from 'react';
 
 import SideNavigation from 'components/SideNavigation';
 import Button from 'components/Button';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import ReportActions from '../../stores/report/actions';
+import PropTypes from 'prop-types';
+import { submitNewReport } from '../../stores/report/actions';
 
 class SubmitReportPage extends React.Component {
   state = {
@@ -14,8 +14,21 @@ class SubmitReportPage extends React.Component {
     details: '',
   };
 
-  handleSubmitReportClick = () => {
-    ReportActions.submitNewReport();
+  handleSubmitReportClick = async () => {
+    this.state.submittedOffendersName = this.state.offendersName;
+    this.state.submittedDate = this.state.date;
+    this.state.submittedLocation = this.state.location;
+    this.state.submittedDetails = this.state.details;
+    this.state.submittedStatus = 'pending';
+    console.log('state1', this.state);
+
+    this.toggleSubmitReportForm();
+  };
+
+  toggleSubmitReportForm = () => {
+    this.setState(prevState => ({
+      toggleSubmitReportForm: !prevState.toggleSubmitReportForm,
+    }));
   };
 
   render() {
@@ -41,7 +54,7 @@ class SubmitReportPage extends React.Component {
           />
           <p className="input-label">Date</p>
           <input
-            placeholder="Enter offender's full name"
+            placeholder="Enter date of incident"
             type="text"
             value={this.state.date}
             onChange={e => this.setState({ date: e.target.value })}
@@ -55,14 +68,14 @@ class SubmitReportPage extends React.Component {
           />
           <p className="input-label">Details</p>
           <textarea
-            placeholder="Enter a description of the case. Enter as much detail as you remember and are comfortable with."
+            placeholder="Enter a description of the case. Enter as much detail as you remember and are comfortable with sharing."
             type="text"
             value={this.state.details}
             onChange={e => this.setState({ details: e.target.value })}
           />
           <Button
             title="Submit Report"
-            onClick={this.handleSubmitReportClick}
+            onClick={() => this.props.submitNewReport(this.state)}
           />
         </div>
       </div>
@@ -72,8 +85,13 @@ class SubmitReportPage extends React.Component {
 
 const mapStateToProps = state => ({ redux: state });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(Object.assign({}, ReportActions), dispatch);
+const mapDispatchToProps = dispatch => ({
+  submitNewReport: state => dispatch(submitNewReport(state)),
+});
+
+SubmitReportPage.propTypes = {
+  submitNewReport: PropTypes.func,
+};
 
 export default connect(
   mapStateToProps,

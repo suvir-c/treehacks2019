@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchReports } from '../../lib/api';
+// import { fetchReports } from '../../lib/api';
 
 class AdminReportsPage extends React.Component {
   state = {};
 
-  async componentWillMount() {
-    const reports = await fetchReports();
-    console.log(reports);
-  }
+  // async componentWillMount() {
+  //   const reports = await fetchReports();
+  //   // console.log(reports);
+  // }
 
   render() {
     return (
