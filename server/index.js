@@ -43,41 +43,6 @@ app.prepare().then(async () => {
     res.sendFile(path.join(__dirname, '..', 'server/static', 'manifest.json'));
   });
 
-  server.get('/blogs/new', (req, res) => {
-    const { params } = req;
-    app.render(req, res, '/blogs/new', params);
-  });
-
-  server.get('/blogs/:id', (req, res) => {
-    const { params } = req;
-    app.render(req, res, '/blogs/show', params);
-  });
-
-  server.get('/blogs/:id/admin', (req, res) => {
-    const { params } = req;
-    app.render(req, res, '/blogs/admin', params);
-  });
-
-  server.get('/blogs/:id/edit', (req, res) => {
-    app.render(req, res, '/blogs/edit', req.params);
-  });
-
-  server.get('/blogs/:id/posts/new', (req, res) => {
-    app.render(req, res, '/blogs/posts/new', req.params);
-  });
-
-  server.get('/blogs/:blogId/posts/:id/edit', (req, res) => {
-    app.render(req, res, '/blogs/posts/edit', req.params);
-  });
-
-  server.get('/posts/:id', (req, res) => {
-    app.render(req, res, '/posts/show', req.params);
-  });
-
-  // Create a new channel
-  server.get('/test', (req, res) => {
-    res.json({ hello: 'world' });
-  });
   // Create a new channel
   server.get('/channel/new', (req, res) => {
     const { params } = req;
