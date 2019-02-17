@@ -9,12 +9,13 @@ const logger = require('./logger');
 const argv = require('./argv');
 const port = require('./port');
 const setup = require('./middlewares/frontendMiddleware');
+
 const isDev = process.env.NODE_ENV !== 'production';
-const ngrok =
-  (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel
-    ? require('ngrok')
-    : false;
+const ngrok = (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel
+  ? require('ngrok')
+  : false;
 const { resolve } = require('path');
+
 const app = express();
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
@@ -23,9 +24,15 @@ radiks
   .setup({
     mongoDBUrl: process.env.MONGODB_URI,
   })
-  .then(RadiksConroller => {
+  .then((RadiksConroller) => {
     app.use('/radiks', RadiksConroller);
     app.use('/api', makeApiController(RadiksConroller.db));
+
+    app.use((req, res, _next) => {
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Headers', '*');
+      _next();
+    });
 
     // Create a new channel
     app.get('/channel/new', (req, res) => {
@@ -68,7 +75,7 @@ app.get('*.js', (req, res, next) => {
 });
 
 // Start your app.
-app.listen(port, host, async err => {
+app.listen(port, host, async (err) => {
   if (err) {
     return logger.error(err.message);
   }

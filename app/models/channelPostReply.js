@@ -1,26 +1,31 @@
-import { UserGroup } from 'radiks';
+import { Model } from 'radiks';
 
-export default class Channel extends UserGroup {
+export default class ChannelPostReply extends Model {
+  static className = 'ChannelPostReply';
+
   static schema = {
-    ...UserGroup.schema,
-    name: {
-      type: String,
-      decrypted: true,
-    },
     description: {
       type: String,
       decrypted: true,
     },
-    typefaceImageUrl: {
+    authorName: {
       type: String,
       decrypted: true,
+    },
+    PostId: {
+      type: String,
+      decrypted: true,
+    },
+    timestamp: {
+      type: Date,
+      default: Date.now(),
     },
   };
 
   static findById(id, options = { decrypt: true }) {
     return this.findOne(
       {
-        _id: id,
+        id,
       },
       options,
     );
