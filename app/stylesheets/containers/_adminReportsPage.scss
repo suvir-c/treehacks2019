@@ -1,0 +1,21 @@
+.admin-reports-page {
+	padding: 150px 20%;
+	.card {
+		h3 {
+			color: $purple;
+		}
+		position: relative;
+		.status {
+			background-color: transparentize($green, 0.3);
+			padding: 0 20px;
+			text-transform: uppercase;
+			color: white;
+			position: absolute;
+			top: 50%;
+			letter-spacing: 0.1em;
+			right: 5px;
+			transform: translate(-50%, -50%);
+			border-radius: 10px;
+		}
+	}
+}

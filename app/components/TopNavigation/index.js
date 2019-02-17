@@ -13,7 +13,9 @@ class Header extends React.Component {
           </a>
         </div>
         <div className="rightNavSection">
-          <h3>About</h3>
+          <a href="/admin">
+            <h3>Admin</h3>
+          </a>
         </div>
       </div>
     );

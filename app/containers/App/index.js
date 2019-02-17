@@ -12,6 +12,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import LoginPage from 'containers/LoginPage/Loadable';
+import AdminReportsPage from 'containers/AdminReportsPage/Loadable';
 import LegalPage from 'containers/LegalPage/Loadable';
 import SupportRoomPage from 'containers/SupportRoomPage/Loadable';
 import SubmitReportPage from 'containers/SubmitReportPage/Loadable';
@@ -38,6 +39,7 @@ export default function App() {
         <Route exact path="/support" component={SupportRoomPage} />
         <Route exact path="/submit-report" component={SubmitReportPage} />
         <Route exact path="/legal" component={LegalPage} />
+        <Route exact path="/admin" component={AdminReportsPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
