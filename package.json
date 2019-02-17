@@ -62,6 +62,7 @@
     "@babel/polyfill": "7.0.0",
     "@esri/react-arcgis": "^4.0.0",
     "blockstack": "^18.3.0",
+    "body-parser": "^1.18.3",
     "chalk": "^2.4.1",
     "compression": "1.7.3",
     "connected-react-router": "4.5.0",
@@ -98,6 +99,7 @@
     "reselect": "4.0.0",
     "sanitize.css": "4.1.0",
     "styled-components": "4.0.2",
+    "twilio": "^3.28.0",
     "warning": "4.0.2"
   },
   "devDependencies": {

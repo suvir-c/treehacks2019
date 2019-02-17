@@ -18,6 +18,11 @@ class SideNavigation extends React.Component {
           </a>
         </div>
         <div className="nav-category-wrapper">
+          <a href="/contact" className="link">
+            <h4>Contacts</h4>
+          </a>
+        </div>
+        <div className="nav-category-wrapper">
           <h4>Resources ↓</h4>
           <a href="/legal" className="link">
             <h5>Legal Advice</h5>

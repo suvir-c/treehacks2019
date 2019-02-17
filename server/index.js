@@ -3,6 +3,7 @@ const next = require('next');
 const path = require('path');
 const secure = require('express-force-https');
 const { resolve } = require('path');
+const twilio = require('twilio');
 require('dotenv').config();
 
 const { setup } = require('radiks-server');
@@ -33,6 +34,31 @@ app.prepare().then(async () => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', '*');
     _next();
+  });
+
+  server.get('/send-message/:message', (req, res) => {
+    const { msg } = req.params;
+    // Download the helper library from https://www.twilio.com/docs/node/install
+    // Your Account Sid and Auth Token from twilio.com/console
+    const accountSid = process.env.TWILIO_ACCOUNT_SID;
+    const authToken = process.env.TWILIO_AUTH_TOKEN;
+    const client = twilio(accountSid, authToken);
+
+    client.messages
+      .create({
+        body: msg,
+        from: '+12155156938',
+        statusCallback: 'http://postb.in/1234abcd',
+        to: '+14157444926',
+      })
+      .then(resp => {
+        console.log(resp.sid);
+        res.status(200).json({ status: 'message successfully sent' });
+      })
+      .catch(e => {
+        console.log(e);
+        res.status(400).json({ status: 'message failed to send' });
+      });
   });
 
   server.get('/hello', (req, res) => {
