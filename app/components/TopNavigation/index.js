@@ -5,7 +5,9 @@ class Header extends React.Component {
   render() {
     return (
       <div className="topNavigation">
-        <div className="logo">Logo</div>
+        <div className="logo">
+          <a href="/">Logo</a>
+        </div>
         <div className="rightNavSection">
           <h3>About</h3>
         </div>

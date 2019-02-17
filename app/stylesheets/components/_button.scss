@@ -6,4 +6,10 @@
 	border-radius: 40px;
 	margin: 40px 0;
 	text-align: center;
+	transition: 0.2s;
+	cursor: pointer;
+	&:hover {
+		background-color: $medium-gray;
+		color: $white;
+	}
 }
