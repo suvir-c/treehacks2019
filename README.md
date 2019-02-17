@@ -9,6 +9,8 @@ Sexual assault victims are in tremendously difficult situations after being assa
 
 Using Blockstack, Echo facilitates anonymized communication among sexual assault victims, legal and medical help, and local authorities to foster a supportive online community for victims. Members of this community can share their stories, advice, and support for each other knowing that they truly own their data and it is anonymous to other users, using Blockstack. Victims may also anonymously report incidents of assault on the platform as they happen, and these reports are shared with local authorities if a particular individual has been reported as an offender on the platform several times by multiple users. This incident data is also used to geographically map where in small communities sexual assault happens, to provide users of the app information on safe walking routes.
 
+Throughout the weekend at TreeHacks, we learned a lot about decentralized apps and our problem space, and it was a great experience. Thank you for hosting us!
+
 ### File structure
 
 Echo is a React App with a minimal back-end. The wrapper component that encapsulates the full application is in ['app.js'](https://github.com/suvir-c/treehacks2019/blob/master/app/app.js), under which are various other components for the community forum, submitting incidents, and more. The code for these components can be found in the ['/app'] directory (https://github.com/suvir-c/treehacks2019/blob/master/app).
