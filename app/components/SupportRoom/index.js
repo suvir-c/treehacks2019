@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Post from 'components/Post';
 // import { fetchChannelPosts } from '../../lib/api';
@@ -8,24 +9,29 @@ import Post from 'components/Post';
 class SupportRoom extends React.Component {
   state = {};
 
-  async componentDidMount() {
-    // console.log(this.props.location);
-    // const params = new URLSearchParams(this.props.location.search);
-    // console.log('test');
-    // const id = params.get('id'); // bar
-    // // fetch posts & replies
-    // const posts = await fetchChannelPosts(id);
-    // console.log(posts);
-    // this.setState({ posts });
-  }
-
   render() {
+    const posts = [];
+    let empty = false;
+    const placeholder = <h1>Be the first one to post!</h1>;
+    if (this.props && this.props.posts.length > 0) {
+      empty = false;
+      for (let i = 0; i < this.props.posts.length; i += 1) {
+        posts.push(<Post value={this.props.posts[i]} />);
+      }
+    } else {
+      empty = true;
+    }
     return (
       <div className="support-room">
-        <Post />
+        {empty && placeholder}
+        {posts}
       </div>
     );
   }
 }
+
+SupportRoom.propTypes = {
+  posts: PropTypes.array,
+};
 
 export default SupportRoom;
