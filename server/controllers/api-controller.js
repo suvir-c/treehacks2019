@@ -1,7 +1,7 @@
 const express = require('express');
 const { decorateApp } = require('@awaitjs/express');
 
-const makeApiController = (db) => {
+const makeApiController = db => {
   const router = decorateApp(express.Router());
 
   /**
@@ -70,6 +70,11 @@ const makeApiController = (db) => {
     };
     const [report] = await db.aggregate([match]).toArray();
 
+    res.json(report);
+  });
+
+  router.getAsync('/reports', async (req, res) => {
+    const [report] = await db.report.find();
     res.json(report);
   });
 

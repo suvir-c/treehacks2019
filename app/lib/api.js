@@ -45,3 +45,10 @@ export const fetchChannelAnalytics = async id => {
   const channelAnalytics = await response.json();
   return channelAnalytics;
 };
+
+export const fetchReports = async () => {
+  const url = `${apiServer}/api/reports`;
+  const response = await fetch(url);
+  const reports = await response.json();
+  return reports;
+};
