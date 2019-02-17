@@ -37,5 +37,9 @@ export default class Report extends Model {
       type: String,
       decrypted: true,
     },
+    // Status of report (pending, etc)
+    status: {
+      type: String,
+    },
   };
 }
