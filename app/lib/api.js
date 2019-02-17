@@ -21,7 +21,7 @@ export const fetchChannels = async () => {
  * @param name
  * @returns {Promise<any>}
  */
-export const fetchChannelPosts = async (id) => {
+export const fetchChannelPosts = async id => {
   const channel = await Channel.findById(id, { decrypt: false });
   const url = `${apiServer}/api/posts/${id}`;
   const response = await fetch(url);
@@ -39,9 +39,16 @@ export const fetchChannelPosts = async (id) => {
  * @param id
  * @returns {Promise<any>}
  */
-export const fetchChannelAnalytics = async (id) => {
+export const fetchChannelAnalytics = async id => {
   const url = `${apiServer}/api/analytics/${id}`;
   const response = await fetch(url);
   const channelAnalytics = await response.json();
   return channelAnalytics;
+};
+
+export const fetchReports = async () => {
+  const url = `${apiServer}/api/reports`;
+  const response = await fetch(url);
+  const reports = await response.json();
+  return reports;
 };

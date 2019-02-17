@@ -3,8 +3,8 @@ import React from 'react';
 import SideNavigation from 'components/SideNavigation';
 import Button from 'components/Button';
 import { bindActionCreators } from 'redux';
-import ReportActions from 'radiks';
 import { connect } from 'react-redux';
+import ReportActions from '../../stores/report/actions';
 
 class SubmitReportPage extends React.Component {
   state = {
@@ -14,7 +14,9 @@ class SubmitReportPage extends React.Component {
     details: '',
   };
 
-  handleSubmitReportClick = () => {};
+  handleSubmitReportClick = () => {
+    ReportActions.submitNewReport();
+  };
 
   render() {
     return (
