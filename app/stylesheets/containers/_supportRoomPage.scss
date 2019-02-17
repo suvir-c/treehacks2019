@@ -1,0 +1,28 @@
+.support-room-page {
+	.button {
+		display: inline-block;
+	}
+	.post-form {
+		border: 1px solid $light-gray;
+		padding: 20px 50px;
+		margin-bottom: 50px;
+		h3 {
+			margin-bottom: 0;
+		}
+	}
+	.reply-form {
+		display: flex;
+		background-color: $white;
+		padding: 20px 50px;
+		margin-bottom: 50px;
+		margin-left: 40px;
+		h3 {
+			margin-bottom: 0;
+		}
+		textarea {
+			font-size: 13px;
+			height: 100px;
+			margin-right: 10px;
+		}
+	}
+}

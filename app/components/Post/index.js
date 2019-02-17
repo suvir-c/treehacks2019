@@ -6,11 +6,20 @@ import Reply from 'components/Reply';
 class Post extends React.Component {
   state = {
     discussionOpen: false,
+    displayAddReply: false,
   };
 
   toggleDiscussion = () => {
     this.setState(prevState => ({ discussionOpen: !prevState.discussionOpen }));
   };
+
+  addReply = () => {
+    this.setState(prevState => ({
+      displayAddReply: !prevState.displayAddReply,
+    }));
+  };
+
+  submitReply = () => {};
 
   render() {
     return (
@@ -32,8 +41,30 @@ class Post extends React.Component {
           >
             <p>Discussions</p>
           </button>
+          <button
+            type="button"
+            className="discussions-button"
+            onClick={this.addReply}
+          >
+            <p>Add Support</p>
+          </button>
         </div>
         {this.state.discussionOpen && <Reply />}
+        {this.state.displayAddReply && (
+          <div className="reply-form">
+            <textarea
+              type="text"
+              placeholder="Type to reply in a support and productive way."
+            />
+            <button
+              type="button"
+              className="discussions-button"
+              onClick={this.submitReply}
+            >
+              <p>Submit</p>
+            </button>
+          </div>
+        )}
       </div>
     );
   }
