@@ -15,7 +15,6 @@ import LoginPage from 'containers/LoginPage/Loadable';
 import LegalPage from 'containers/LegalPage/Loadable';
 import SupportRoomPage from 'containers/SupportRoomPage/Loadable';
 import SubmitReportPage from 'containers/SubmitReportPage/Loadable';
-import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import TopNavigation from 'components/TopNavigation';
 import Footer from 'components/Footer';
@@ -40,7 +39,6 @@ export default function App() {
         <Route exact path="/submit-report" component={SubmitReportPage} />
         <Route exact path="/legal" component={LegalPage} />
         <Route exact path="/login" component={LoginPage} />
-        <Route path="/features" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />
