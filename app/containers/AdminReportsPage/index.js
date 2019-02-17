@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import ReportActions from '../../stores/report/actions';
 
 class AdminReportsPage extends React.Component {
   state = {};
@@ -12,7 +10,7 @@ class AdminReportsPage extends React.Component {
         <div className="card card-long">
           <div>
             <h3>Report Status</h3>
-            <p>Sumittted Jan 14, 2019</p>
+            <p>Sumitted Jan 14, 2019</p>
             <p>Insert short description here...</p>
             <div className="status">
               <h4>Filed</h4>
@@ -26,10 +24,7 @@ class AdminReportsPage extends React.Component {
 
 const mapStateToProps = state => ({ redux: state });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(Object.assign({}, ReportActions), dispatch);
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  null,
 )(AdminReportsPage);
