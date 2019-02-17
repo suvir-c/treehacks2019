@@ -1,0 +1,20 @@
+@import 'utils/all';
+@import 'components/all';
+
+body {
+	font-family: 'Poppins', sans-serif;
+	letter-spacing: 0.03em;
+	color: $dark-blue;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+p {
+	font-family: 'Poppins', sans-serif;
+	letter-spacing: 0.02em;
+	font-size: 14px;
+	line-height: 1.5em;
+}

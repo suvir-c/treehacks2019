@@ -1,0 +1,42 @@
+.page-wrapper-sidebar {
+	display: flex;
+	padding: 100px 2%;
+}
+
+.page-body {
+	margin: 20px 2%;
+	max-width: 700px;
+}
+.cards-wrapper {
+	margin: 60px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.card {
+	background-color: $off-white;
+	width: 30%;
+	padding: 20px 20px;
+	border-left: 12px solid transparentize($orange, 0.3);
+	border-radius: 10px;
+	transition: 0.2s;
+	@extend .drop-shadow;
+	&:hover {
+		transform: translateY(-4px);
+	}
+	p {
+		color: $medium-gray;
+	}
+}
+
+.body-text {
+	line-height: 2em;
+}
+
+.drop-shadow {
+	box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.03), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+button:focus {
+	outline:0;
+}

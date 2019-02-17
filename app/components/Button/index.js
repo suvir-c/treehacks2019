@@ -9,16 +9,14 @@
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 
-import A from './A';
 import StyledButton from './StyledButton';
-import Wrapper from './Wrapper';
 
 function Button(props) {
   // Render an anchor tag
   let button = (
-    <A href={props.href} onClick={props.onClick}>
-      {Children.toArray(props.children)}
-    </A>
+    <a href={props.href} onClick={props.onClick}>
+      {props.title}
+    </a>
   );
 
   // If the Button has a handleRoute prop, we want to render a button
@@ -30,14 +28,15 @@ function Button(props) {
     );
   }
 
-  return <Wrapper>{button}</Wrapper>;
+  return <div className="button">{button}</div>;
 }
 
 Button.propTypes = {
   handleRoute: PropTypes.func,
   href: PropTypes.string,
   onClick: PropTypes.func,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
+  title: PropTypes.string,
 };
 
 export default Button;
