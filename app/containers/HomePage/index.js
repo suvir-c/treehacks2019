@@ -1,9 +1,22 @@
 import React from 'react';
 
 import SideNavigation from 'components/SideNavigation';
+import Button from 'components/Button';
 
 class HomePage extends React.Component {
-  state = {};
+  state = {
+    toggleCommunityForm: '',
+    communityName: '',
+    communityDescription: '',
+  };
+
+  handleSubmitCommunity = () => {};
+
+  toggleCommunityForm = () => {
+    this.setState(prevState => ({
+      toggleCommunityForm: !prevState.toggleCommunityForm,
+    }));
+  };
 
   render() {
     return (
@@ -28,6 +41,32 @@ class HomePage extends React.Component {
               </div>
             </div>
           </div>
+
+          <Button title="Create Community" onClick={this.toggleCommunityForm} />
+          {this.state.toggleCommunityForm && (
+            <div className="form">
+              <h3>Create Community</h3>
+              <input
+                placeholder="Enter name"
+                type="text"
+                value={this.state.communityName}
+                onChange={e => this.setState({ communityName: e.target.value })}
+              />
+              <p className="input-label">Details</p>
+              <input
+                placeholder="Enter community description"
+                type="text"
+                value={this.state.communityDescription}
+                onChange={e =>
+                  this.setState({ communityDescription: e.target.value })
+                }
+              />
+              <Button
+                title="Submit Community"
+                onClick={this.handleSubmitCommunity}
+              />
+            </div>
+          )}
         </div>
       </div>
     );
