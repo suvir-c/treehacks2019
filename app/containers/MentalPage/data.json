@@ -1,21 +1,16 @@
 {
   "title": "Mental Health Support",
-  "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "body": "Sexual harassment and sexual discrimination continue to be pervasive problems for women in business, academia, and medicine, with widespread and often serious health, emotional, and economic consequences. It is important that health care providers become aware of the common physical and emotional symptoms associated with these victimization experiences and serve as supportive and informed resources to their patients.",
   "cards": [
     {
-      "link": "https://www.nolo.com/legal-encyclopedia/sexual-harassment-when-you-should-talk-lawyer.html",
-      "title": "Legal Consultations in LA",
-      "description": "Find lawyers in your area for quick legal help."
+      "link": "http://www.mentalhealthamerica.net/conditions/sexual-assault-and-mental-health",
+      "title": "Read About the Effects of Assault on Mental Health",
+      "description": "Understand how such incident can affect your personal mental health."
     },
     {
-      "link": "https://www.nolo.com/legal-encyclopedia/sexual-harassment-when-you-should-talk-lawyer.html",
-      "title": "Legal Consultations in LA",
-      "description": "Find lawyers in your area for quick legal help."
-    },
-    {
-      "link": "https://www.nolo.com/legal-encyclopedia/sexual-harassment-when-you-should-talk-lawyer.html",
-      "title": "Legal Consultations in LA",
-      "description": "Find lawyers in your area for quick legal help."
+      "link": "https://www.psychologytoday.com/us/blog/womans-place/201806/the-mental-health-costs-harassment",
+      "title": "Learn About Statistics of Women in the US",
+      "description": "Read about statistics of women who suffer from incidents."
     }
   ]
 }

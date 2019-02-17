@@ -1,21 +1,21 @@
 {
   "title": "Local Police Information",
-  "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "body": "It’s common for sexual assault survivors to question whether or not they should contact law enforcement and report their assault. While many believe that a survivor should report their assault right away, and may even be frustrated by a survivor’s hesitancy to do so, there are many reasons why a sexual assault survivor may not immediately report the crime. Sexual assault takes an enormous physical and emotional toll on a survivor, who may still be processing what happened, and may not be totally ready to handle retelling their story. In a study by the National Institute of Justice, 42 percent of “physically forced” victims who did not report their assault to the police said they did not make a report because they “did not want anyone to know.” Despite the fact that assault is never the survivor’s fault, someone who has experienced sexual assault may still feel concerned that they will be blamed for their attack.",
   "cards": [
     {
-      "link": "https://www.nolo.com/legal-encyclopedia/sexual-harassment-when-you-should-talk-lawyer.html",
-      "title": "Legal Consultations in LA",
-      "description": "Find lawyers in your area for quick legal help."
+      "link": "https://www.rainn.org/about-national-sexual-assault-telephone-hotline",
+      "title": "Call to Connect with an Aid in Your Area",
+      "description": "Provides local support and resources to you."
     },
     {
-      "link": "https://www.nolo.com/legal-encyclopedia/sexual-harassment-when-you-should-talk-lawyer.html",
-      "title": "Legal Consultations in LA",
-      "description": "Find lawyers in your area for quick legal help."
+      "link": "https://www.breakthecycle.org/blog/reporting-sexual-assault-police",
+      "title": "Learn How to Report Incidents",
+      "description": "Figure out the first steps to raising your voice in this difficult situation."
     },
     {
-      "link": "https://www.nolo.com/legal-encyclopedia/sexual-harassment-when-you-should-talk-lawyer.html",
-      "title": "Legal Consultations in LA",
-      "description": "Find lawyers in your area for quick legal help."
+      "link": "https://www.washington.edu/sexualassault/reporting/police/",
+      "title": "Reporting Incidents in College Enviorments",
+      "description": "Speak up as a college student and make campus safer for everyone."
     }
   ]
 }

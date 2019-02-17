@@ -38,25 +38,29 @@ class HomePage extends React.Component {
   render() {
     let channels = null;
     if (this.state.channels) {
-      channels = this.state.channels.map(channel => (
-        <div className="card card-short">
-          <div>
-            <Link
-              to={{
-                pathname: '/support',
-                state: {
-                  id: channel.attrs.id,
-                  name: channel.attrs.name,
-                  description: channel.attrs.description,
-                },
-              }}
-            >
-              <h3>{channel.attrs.name}</h3>
-              <p>{channel.attrs.description}</p>
-            </Link>
-          </div>
+      channels = (
+        <div className="cards-wrapper">
+          {this.state.channels.map(channel => (
+            <div className="card">
+              <div>
+                <Link
+                  to={{
+                    pathname: '/support',
+                    state: {
+                      id: channel.attrs.id,
+                      name: channel.attrs.name,
+                      description: channel.attrs.description,
+                    },
+                  }}
+                >
+                  <h3>{channel.attrs.name}</h3>
+                  <p>{channel.attrs.description}</p>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
-      ));
+      );
     }
     return (
       <div className="page-wrapper-sidebar home-page">
