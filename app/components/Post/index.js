@@ -19,7 +19,11 @@ class Post extends React.Component {
     }));
   };
 
-  submitReply = () => {};
+  submitReply = () => {
+    // var reply = <Reply/>
+    // var concatReplies = this.state.replies.concat('');
+    // this.setState({ replies: concatReplies });
+  };
 
   render() {
     return (
