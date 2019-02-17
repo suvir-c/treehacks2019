@@ -22,10 +22,10 @@ class SideNavigation extends React.Component {
           <a href="/legal" className="link">
             <h5>Legal Advice</h5>
           </a>
-          <a href="/" className="link">
+          <a href="/police" className="link">
             <h5>Police Information</h5>
           </a>
-          <a href="/" className="link">
+          <a href="/mental" className="link">
             <h5>Mental Health Kit</h5>
           </a>
         </div>

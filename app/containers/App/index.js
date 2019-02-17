@@ -14,6 +14,8 @@ import HomePage from 'containers/HomePage/Loadable';
 import LoginPage from 'containers/LoginPage/Loadable';
 import AdminReportsPage from 'containers/AdminReportsPage/Loadable';
 import LegalPage from 'containers/LegalPage/Loadable';
+import MentalPage from 'containers/MentalPage/Loadable';
+import PolicePage from 'containers/PolicePage/Loadable';
 import SupportRoomPage from 'containers/SupportRoomPage/Loadable';
 import SubmitReportPage from 'containers/SubmitReportPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -39,6 +41,8 @@ export default function App() {
         <Route exact path="/support" component={SupportRoomPage} />
         <Route exact path="/submit-report" component={SubmitReportPage} />
         <Route exact path="/legal" component={LegalPage} />
+        <Route exact path="/police" component={PolicePage} />
+        <Route exact path="/mental" component={MentalPage} />
         <Route exact path="/admin" component={AdminReportsPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route path="" component={NotFoundPage} />

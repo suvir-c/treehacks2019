@@ -1,0 +1,21 @@
+{
+  "title": "Mental Health Support",
+  "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "cards": [
+    {
+      "link": "https://www.nolo.com/legal-encyclopedia/sexual-harassment-when-you-should-talk-lawyer.html",
+      "title": "Legal Consultations in LA",
+      "description": "Find lawyers in your area for quick legal help."
+    },
+    {
+      "link": "https://www.nolo.com/legal-encyclopedia/sexual-harassment-when-you-should-talk-lawyer.html",
+      "title": "Legal Consultations in LA",
+      "description": "Find lawyers in your area for quick legal help."
+    },
+    {
+      "link": "https://www.nolo.com/legal-encyclopedia/sexual-harassment-when-you-should-talk-lawyer.html",
+      "title": "Legal Consultations in LA",
+      "description": "Find lawyers in your area for quick legal help."
+    }
+  ]
+}
