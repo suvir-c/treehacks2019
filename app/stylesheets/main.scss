@@ -1,4 +1,5 @@
 @import 'utils/all';
+@import 'containers/all';
 @import 'components/all';
 
 body {
@@ -10,6 +11,11 @@ body {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	letter-spacing: 0.05em;
 }
 
 p {
@@ -36,11 +42,20 @@ input, textarea {
 textarea {
 	border: 2px solid $off-white;
 	padding: 10px;
-	margin-top: 20px;
-	height: 300px;
+	margin: 20px 0;
+	height: 250px;
 	font-family: 'Poppins', sans-serif;
 	border-bottom: 4px solid $off-white;
 	resize: none;
+}
+
+button:focus {
+	outline:0;
+}
+
+.highlight {
+	background-color: transparentize($orange, 0.7);
+	padding: 0 3px;
 }
 
 .input-label {

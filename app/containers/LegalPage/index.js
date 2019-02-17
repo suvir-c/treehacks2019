@@ -16,6 +16,9 @@ export default function LegalPage() {
               <div>
                 <h3>{cardInfo.title}</h3>
                 <p>{cardInfo.description}</p>
+                <div className="status">
+                  <h3>Filed</h3>
+                </div>
               </div>
             </a>
           ))}

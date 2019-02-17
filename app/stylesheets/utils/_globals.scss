@@ -6,6 +6,7 @@
 .page-body {
 	margin: 20px 2%;
 	max-width: 700px;
+	width: 100%;
 }
 .cards-wrapper {
 	margin: 60px 0;
@@ -26,7 +27,13 @@
 	}
 	p {
 		color: $medium-gray;
+		line-height: 1em;
 	}
+}
+
+.card-long {
+	border-left: 12px solid transparentize($purple, 0.3);
+	width: 100%;
 }
 
 .body-text {
@@ -35,8 +42,4 @@
 
 .drop-shadow {
 	box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.03), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
-}
-
-button:focus {
-	outline:0;
 }
