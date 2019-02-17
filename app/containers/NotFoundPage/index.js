@@ -5,17 +5,15 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-
-import H1 from 'components/H1';
-import messages from './messages';
+import SideNavigation from 'components/SideNavigation';
 
 export default function NotFound() {
   return (
-    <article>
-      <H1>
-        <FormattedMessage {...messages.header} />
-      </H1>
-    </article>
+    <div className="page-wrapper-sidebar">
+      <SideNavigation />
+      <div className="page-body">
+        <h1>Welcome</h1>
+      </div>
+    </div>
   );
 }
