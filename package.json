@@ -60,9 +60,13 @@
   },
   "dependencies": {
     "@babel/polyfill": "7.0.0",
+    "blockstack": "^18.3.0",
+    "blockstack-signin-btn": "^1.0.3",
+    "blockstack-ui": "0.0.71",
     "chalk": "^2.4.1",
     "compression": "1.7.3",
     "connected-react-router": "4.5.0",
+    "cors": "^2.8.5",
     "cross-env": "5.2.0",
     "dotenv": "^6.2.0",
     "express": "4.16.4",
