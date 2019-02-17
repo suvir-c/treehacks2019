@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import Reply from 'components/Reply';
 
 /* eslint-disable react/prefer-stateless-function */
@@ -7,6 +7,8 @@ class Post extends React.Component {
   state = {
     discussionOpen: false,
     displayAddReply: false,
+    replies: [],
+    replyText: '',
   };
 
   toggleDiscussion = () => {
@@ -20,24 +22,21 @@ class Post extends React.Component {
   };
 
   submitReply = () => {
-    // var reply = <Reply/>
-    // var concatReplies = this.state.replies.concat('');
-    // this.setState({ replies: concatReplies });
+    const reply = this.state.replyText;
+    this.setState(prevState => ({ replies: prevState.replies.concat(reply) }));
+    this.setState({ discussionOpen: true });
   };
 
   render() {
+    const replies = [];
+    for (let i = 0; i < this.state.replies.length; i += 1) {
+      replies.push(<Reply value={this.state.replies[i]} />);
+    }
     return (
       <div className="post-wrapper">
         <h4 className="author">Author</h4>
         <div className="post">
-          <p className="body-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum
-            dolor dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna.
-          </p>
+          <p className="body-text">{this.props.value}</p>
           <button
             type="button"
             className="discussions-button"
@@ -53,11 +52,13 @@ class Post extends React.Component {
             <p>Add Support</p>
           </button>
         </div>
-        {this.state.discussionOpen && <Reply />}
+        {this.state.discussionOpen && replies}
         {this.state.displayAddReply && (
           <div className="reply-form">
             <textarea
               type="text"
+              value={this.state.replyText}
+              onChange={e => this.setState({ replyText: e.target.value })}
               placeholder="Type to reply in a support and productive way."
             />
             <button
@@ -73,5 +74,9 @@ class Post extends React.Component {
     );
   }
 }
+
+Post.propTypes = {
+  value: PropTypes.string,
+};
 
 export default Post;

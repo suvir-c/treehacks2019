@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /* eslint-disable react/prefer-stateless-function */
 class Reply extends React.Component {
@@ -6,15 +7,14 @@ class Reply extends React.Component {
     return (
       <div className="reply">
         <h4 className="author">Author</h4>
-        <p className="body-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p className="body-text">{this.props.value}</p>
       </div>
     );
   }
 }
+
+Reply.propTypes = {
+  value: PropTypes.string,
+};
 
 export default Reply;
